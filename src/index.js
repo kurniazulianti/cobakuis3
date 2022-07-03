@@ -1,17 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+const nama = "Anti";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function Welcome(props){
+  return(
+    <div>
+      <h1>Selamat datang {props.nama}</h1>
+    </div>
+  );
+}
+
+function Home(){
+      if (nama === ""){
+        return <button>Login</button>;
+      }
+      else{
+        return <Welcome nama = {nama}/>;
+      }
+}
+
+root.render(<Home />);
